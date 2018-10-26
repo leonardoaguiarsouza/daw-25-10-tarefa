@@ -1,6 +1,6 @@
 package br.edu.ifsul.dao;
 
-import br.edu.ifsul.modelo.Vendedor;
+import br.edu.ifsul.modelo.Carro;
 import java.io.Serializable;
 
 /**
@@ -9,12 +9,13 @@ import java.io.Serializable;
  * @email jorge.bavaresco@passofundo.ifsul.edu.br
  * @organization IFSUL - Campus Passo Fundo
  */
-public class VendedorDAO<TIPO> extends DAOGenerico<Vendedor> implements Serializable {
+public class CarroDAO<TIPO> extends DAOGenerico<Carro> implements Serializable {
     
-    public VendedorDAO(){
+    public CarroDAO(){
         super();
-        classePersistente = Vendedor.class;
+        classePersistente = Carro.class;
         // inicializar a ordem padrão
+        ordem = "modelo";
     }
    
 }

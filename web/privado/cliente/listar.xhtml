@@ -9,13 +9,13 @@
     <h:body>
         <h:form>
             <h:messages/>
-            <h:commandButton value="Novo" action="#{controleVendedor.novo()}"/>
-            <h:dataTable value="#{controleVendedor.dao.lista}" var="obj">
+            <h:commandButton value="Novo" action="#{controleCliente.novo()}"/>
+            <h:dataTable value="#{controleCliente.dao.lista}" var="obj">
                 <f:facet name="header">
-                    <h:outputText value="Listagem de Vendedores"/>
+                    <h:outputText value="Listagem de Clientees"/>
                 </f:facet>
                 <f:facet name="footer">
-                    <h:outputText value="Total de registros: #{controleVendedor.dao.lista.size()}"/>
+                    <h:outputText value="Total de registros: #{controleCliente.dao.lista.size()}"/>
                 </f:facet>
                 <h:column>
                     <f:facet name="header">
@@ -43,11 +43,11 @@
                 </h:column>
                 <h:column>
                     <h:commandLink value="Alterar"
-                                   action="#{controleVendedor.editar(obj.id)}"/>      
+                                   action="#{controleCliente.editar(obj.id)}"/>      
                 </h:column>
                 <h:column>
                     <h:commandLink value="Excluir"
-                                   action="#{controleVendedor.remover(obj.id)}"
+                                   action="#{controleCliente.remover(obj.id)}"
                                    onclick="if (!confirm('Confirma a exclusão?')) return false"/>
                 </h:column>
             </h:dataTable>

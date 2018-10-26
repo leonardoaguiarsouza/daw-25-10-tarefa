@@ -1,8 +1,8 @@
 package br.edu.ifsul.controle;
 
-import br.edu.ifsul.dao.VendedorDAO;
+import br.edu.ifsul.dao.LocacaoDAO;
 import br.edu.ifsul.dao.ModeloDAO;
-import br.edu.ifsul.modelo.Vendedor;
+import br.edu.ifsul.modelo.Locacao;
 import br.edu.ifsul.util.Util;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -15,16 +15,16 @@ import javax.faces.bean.SessionScoped;
  * @email jorge.bavaresco@passofundo.ifsul.edu.br
  * @organization IFSUL - Campus Passo Fundo
  */
-@ManagedBean(name = "controleVendedor")
+@ManagedBean(name = "controleLocacao")
 @SessionScoped
-public class ControleVendedor implements Serializable {
+public class ControleLocacao implements Serializable {
 
-    private VendedorDAO<Vendedor> dao;
-    private Vendedor objeto;
+    private LocacaoDAO<Locacao> dao;
+    private Locacao objeto;
     private ModeloDAO daoModelo;
     
-    public ControleVendedor(){
-        dao = new VendedorDAO<>();
+    public ControleLocacao(){
+        dao = new LocacaoDAO<>();
         daoModelo = new ModeloDAO<>();
     }
     
@@ -33,7 +33,7 @@ public class ControleVendedor implements Serializable {
     }
     
     public String novo(){
-        objeto = new Vendedor();
+        objeto = new Locacao();
         return "formulario?faces-redirect=true";
     }
     
@@ -76,19 +76,19 @@ public class ControleVendedor implements Serializable {
         }
     }
 
-    public VendedorDAO getDao() {
+    public LocacaoDAO getDao() {
         return dao;
     }
 
-    public void setDao(VendedorDAO dao) {
+    public void setDao(LocacaoDAO dao) {
         this.dao = dao;
     }
 
-    public Vendedor getObjeto() {
+    public Locacao getObjeto() {
         return objeto;
     }
 
-    public void setObjeto(Vendedor objeto) {
+    public void setObjeto(Locacao objeto) {
         this.objeto = objeto;
     }
 
